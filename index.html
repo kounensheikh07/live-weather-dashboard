@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Live Weather Dashboard</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+  <main class="app">
+    <section class="hero">
+      <p class="eyebrow">ASYNC JAVASCRIPT • REST API</p>
+      <h1>Live Weather Dashboard</h1>
+      <p class="subtitle">Search any city and view live weather data fetched with Fetch API and async/await.</p>
+
+      <form id="searchForm" class="search-box">
+        <input id="cityInput" type="text" placeholder="Enter city name e.g. Nagpur" autocomplete="off" required>
+        <button type="submit">Search</button>
+      </form>
+
+      <p id="status" class="status" aria-live="polite">Enter a city to get weather.</p>
+    </section>
+
+    <section id="weatherSection" class="weather-section hidden">
+      <div class="location-row">
+        <div>
+          <p class="label">CURRENT WEATHER</p>
+          <h2 id="locationName">—</h2>
+          <p id="locationDetails">—</p>
+        </div>
+        <div id="weatherIcon" class="weather-icon">☀️</div>
+      </div>
+
+      <div class="main-temp">
+        <span id="temperature">—</span><sup>°C</sup>
+      </div>
+      <p id="condition" class="condition">—</p>
+
+      <div class="cards">
+        <article class="card">
+          <span class="card-icon">💧</span>
+          <div><p>Humidity</p><strong id="humidity">—</strong></div>
+        </article>
+        <article class="card">
+          <span class="card-icon">💨</span>
+          <div><p>Wind Speed</p><strong id="wind">—</strong></div>
+        </article>
+        <article class="card">
+          <span class="card-icon">🌡️</span>
+          <div><p>Feels Like</p><strong id="feelsLike">—</strong></div>
+        </article>
+        <article class="card">
+          <span class="card-icon">☁️</span>
+          <div><p>Cloud Cover</p><strong id="cloud">—</strong></div>
+        </article>
+      </div>
+
+      <details class="json-panel">
+        <summary>View parsed API JSON</summary>
+        <pre id="jsonOutput"></pre>
+      </details>
+    </section>
+  </main>
+
+  <footer>
+    Weather data by Open-Meteo • Built with HTML, CSS & JavaScript
+  </footer>
+
+  <script src="script.js"></script>
+</body>
+</html>
